@@ -1,0 +1,34 @@
+<div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+  <div class=" relative inline-block text-left dropdown">
+      <span class="rounded-md shadow-sm">
+        <button class="inline-flex justify-center w-full transition duration-150 ease-in-out rounded-lg hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
+          <img class="w-8 h-8 rounded-full" src="https://github.com/acmesquita.png" alt="user photo">
+        </button>
+      </span>
+
+      <div class="hidden dropdown-menu">
+
+      <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
+          <div class="px-4 py-3">
+          <p class="text-sm leading-5">Signed in as</p>
+          <p class="text-sm font-medium leading-5 text-gray-900 truncate">tom@example.com</p>
+          </div>
+          <div class="py-1">
+          <a href="javascript:void(0)" class="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left"  role="menuitem" >Account settings</a>
+          <a href="javascript:void(0)" class="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left"  role="menuitem" >Support</a>
+          <span role="menuitem" tabindex="-1" class="flex justify-between w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 cursor-not-allowed opacity-50" aria-disabled="true">New feature (soon)</span>
+          <a href="javascript:void(0)" class="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" >License</a></div>
+          <div class="py-1">
+            <%= link_to "Sign out", destroy_user_session_path, "data-turbo-method": :delete, class: "text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" %>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<style>
+.dropdown:focus-within .dropdown-menu {
+  /* @apply block; */
+  display:block;
+}
+    </style>
