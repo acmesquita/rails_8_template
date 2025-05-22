@@ -1,0 +1,24 @@
+<%= form_with url: users_path, method: :get, data: { turbo_frame: "users_list", controller: "form", action: "change->form#submit" } do |f| %>
+  <div class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-3">
+    <div class="col-span-2">
+      <%= f.label :query, "Search", class: "block text-sm font-medium leading-6 text-gray-900" %>
+      <div class="mt-2.5">
+        <%= f.text_field :query,
+            value: params[:query],
+            data: { action: "input->form#submit" },
+            placeholder: "Search by name or email",
+            class: "block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      </div>
+    </div>
+
+    <div>
+      <%= f.label :status, "Status", class: "block text-sm font-medium leading-6 text-gray-900" %>
+      <div class="mt-2.5">
+        <%= f.select :status,
+            options_for_select([["All", ""], ["Active", "active"], ["Inactive", "inactive"]], params[:status]),
+            {},
+            class: "block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      </div>
+    </div>
+  </div>
+<% end %>
